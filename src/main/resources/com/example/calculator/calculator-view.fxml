@@ -13,18 +13,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="370.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator.CalculatorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="370.0" style="-fx-background-color: rgba(0,0,0,0);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator.CalculatorController">
    <children>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-radius: 30; -fx-background-color: #fcefb8; -fx-border-radius: 26; -fx-border-width: 5; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" prefHeight="580.0" prefWidth="370.0" style="-fx-background-radius: 30; -fx-background-color: #fcefb8; -fx-border-radius: 26; -fx-border-width: 5; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <StackPane prefHeight="214.0" prefWidth="360.0">
+            <StackPane prefHeight="210.0" prefWidth="360.0">
                <children>
                   <ImageView blendMode="SRC_ATOP" fitHeight="190.0" fitWidth="354.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@calcface2.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="BOTTOM_RIGHT" graphicTextGap="0.0" prefHeight="165.0" prefWidth="350.0" style="-fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25; -fx-border-width: 5;" text="0">
+                  <Label fx:id="output" alignment="BOTTOM_RIGHT" graphicTextGap="0.0" prefHeight="165.0" prefWidth="350.0" style="-fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25; -fx-border-width: 5;" text="0">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
@@ -49,7 +49,7 @@
                 <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #ffa8d1; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="CE">
+                  <Button mnemonicParsing="false" onAction="#clearOutput" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #ffa8d1; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="CE">
                      <GridPane.margin>
                         <Insets bottom="8.0" left="8.0" right="8.0" />
                      </GridPane.margin>
@@ -81,7 +81,7 @@
                         <Font name="DIN Alternate Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #ffa8d1; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <Button mnemonicParsing="false" onAction="#decimalPoint" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #ffa8d1; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="." GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="8.0" left="8.0" right="8.0" />
                      </GridPane.margin>
@@ -89,7 +89,7 @@
                         <Font name="DIN Alternate Bold" size="26.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #72e9ed; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="\%" GridPane.columnIndex="1">
+                  <Button mnemonicParsing="false" onAction="#processOperator" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #72e9ed; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="\%" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets bottom="8.0" left="8.0" right="8.0" />
                      </GridPane.margin>
@@ -129,7 +129,7 @@
                         <Font name="DIN Alternate Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #72e9ed; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="+" GridPane.columnIndex="2">
+                  <Button mnemonicParsing="false" onAction="#processOperator" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #72e9ed; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="+" GridPane.columnIndex="2">
                      <GridPane.margin>
                         <Insets bottom="8.0" left="8.0" right="8.0" />
                      </GridPane.margin>
@@ -137,7 +137,7 @@
                         <Font name="DIN Alternate Bold" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #72e9ed; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="-" GridPane.columnIndex="3">
+                  <Button mnemonicParsing="false" onAction="#processOperator" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #72e9ed; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="-" GridPane.columnIndex="3">
                      <GridPane.margin>
                         <Insets bottom="8.0" left="8.0" right="8.0" />
                      </GridPane.margin>
@@ -161,7 +161,7 @@
                         <Font name="DIN Alternate Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #72e9ed; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="/" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#processOperator" prefHeight="60.0" prefWidth="60.0" style="-fx-background-radius: 12; -fx-background-color: #72e9ed; -fx-border-color: black; -fx-border-radius: 8; -fx-border-width: 3;" text="/" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets bottom="8.0" left="8.0" right="8.0" />
                      </GridPane.margin>

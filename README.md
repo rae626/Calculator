@@ -41,5 +41,3 @@ If you encounter any bugs or issues with the application, please submit them as 
 ## License
 This project is licensed under the MIT License.
 
-## Contact Information
-If you have any questions or comments about the application, please email me at raebrand626@gmail.com.
